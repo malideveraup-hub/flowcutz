@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 19, 31, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: var(--space-4);
+}
+
+.dialog {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-5);
+}
+
+.dialog.clean {
+  background: #fff;
+  border-radius: var(--radius-staff-card);
+}
+
+.dialog.pixel {
+  background: var(--customer-surface);
+  border: 3px solid var(--customer-cream);
+  border-radius: var(--radius-pixel);
+  color: var(--customer-cream);
+}
+
+.dialog.barber {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 20px;
+  background: #211e33;
+  color: #f3f1fb;
+  box-shadow: 0 24px 70px rgba(5, 4, 12, .48);
+}
+
+.dialog.logout {
+  max-width: 360px;
+  padding: 20px;
+  border: 1px solid #39345c;
+  border-radius: 15px;
+  background: #201d3b;
+  color: #f5f3ff;
+  box-shadow: 0 24px 72px rgba(8, 7, 18, .55);
+}
+
+.logoutHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 16px 12px;
+  margin-bottom: 8px;
+}
+
+.logoutIcon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 9px;
+  background: #302b50;
+  color: #c1b4ff;
+}
+
+.logoutIcon svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.logoutHeader .title { grid-column: 1 / -1; margin: 0; color: #f5f3ff; }
+.dialog.logout > div > p { margin: 0; color: #aaa5c1; font-size: 13px; line-height: 1.5; }
+.dialog.logout .logoutActions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+
+@media (max-width: 420px) {
+  .dialog.logout { max-width: 100%; }
+  .dialog.logout .logoutActions { flex-direction: row; }
+}
+
+.title {
+  font-size: var(--text-heading);
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+}
